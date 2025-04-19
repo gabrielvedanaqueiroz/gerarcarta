@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+button{
+  cursor: pointer;
+}
+
 @layer utilities {
   .text-fit {
     font-size: clamp(10px, 5vw, 100px);

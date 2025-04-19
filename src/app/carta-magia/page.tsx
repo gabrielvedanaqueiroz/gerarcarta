@@ -28,9 +28,47 @@ export default function CartaMagia() {
   const [refComponentes, setComponentes]  = useState<string>('V, S, M');
   
   return (
-    <div>
+    <div className="flex m-1.5 gap-1">
     
-      <div className="flex rounded-lg h-80 w-60 p-1 m-1.5 bg-emerald-700 border-1 border-emerald-800" key='carta-div' > 
+      <div className="flex flex-col w-1/2 gap-0.5 text-white rounded-lg shadow-2xl">
+
+        <div className="flex flex-col bg-emerald-800 p-2 rounded-t-xl w-full shadow">
+          <label className="text-sm">Título</label>
+          <input className="outline-none text-lg transition-all 0.3s ease-in-out" placeholder="Título" value={refTitulo} onChange={(e)=>setTitulo(e.target.value)}/>
+        </div>
+
+        <div className="flex flex-col bg-emerald-800  p-2 rounded-sm w-full shadow h-45">
+        <label className="text-sm">Texto</label>
+          <textarea className="outline-none h-full resize-none overflow-hidden" placeholder="Texto" value={refTexto} onChange={(e)=>setTexto(e.target.value)}/>
+        </div>
+
+        <div className="flex flex-col bg-emerald-800 p-2 rounded-sm w-full shadow">
+          <label className="text-sm">Nível</label>
+          <input className="outline-none" placeholder="Nível" value={refNivel} onChange={(e)=>setNivel(e.target.value)}/>
+        </div>
+
+        <div className="flex flex-col bg-emerald-800 p-2 rounded-sm w-full shadow">
+          <label className="text-sm">Tempo de conjuração</label>
+          <input className="outline-none" placeholder="Tempo de conjuração" value={refTempo} onChange={(e)=>setTempo(e.target.value)}/>
+        </div>
+
+        <div className="flex flex-col bg-emerald-800  p-2 rounded-sm w-full shadow">
+          <label className="text-sm">Alcance</label>
+          <input className="outline-none" placeholder="Alcance" value={refAlcance} onChange={(e)=>setAlcance(e.target.value)}/>
+        </div>
+
+        <div className="flex flex-col bg-emerald-800 p-2 rounded-sm w-full shadow">
+          <label className="text-sm">Duração</label>
+          <input className="outline-none" placeholder="Duração" value={refDuracao} onChange={(e)=>setDuracao(e.target.value)}/>
+        </div>
+
+        <div className="flex flex-col bg-emerald-800 p-2 rounded-b-xl w-full shadow">
+          <label className="text-sm">Componentes</label>
+          <input className="outline-none" placeholder="Componentes" value={refComponentes} onChange={(e)=>setComponentes(e.target.value)}/>
+        </div>
+      </div>  
+
+      <div className="flex rounded-lg h-80 w-60 p-1 bg-emerald-700 border-1 border-emerald-800 shadow-2xl" key='carta-div' > 
         {/* <div className="flex flex-col rounded-sm w-full gap-1 bg-[url('/textura4.jpg')] bg-center bg-cover"  >  */}
         <div className="flex flex-col rounded-sm w-full gap-1 bg-[url('/textura4.jpg')] bg-center bg-cover border-1 border-emerald-800"  > 
 
@@ -93,30 +131,6 @@ export default function CartaMagia() {
         </div>      
       </div>
 
-      <div className="texto-simples m-2 w-full" >
-        <label>Titulo: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2" placeholder="Título" value={refTitulo} onChange={(e)=>setTitulo(e.target.value)}/>
-        
-        <br/><label>Texto: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2"placeholder="Texto" value={refTexto} onChange={(e)=>setTexto(e.target.value)}/>
-        
-        <br/><label>Nível: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2"placeholder="Nível" value={refNivel} onChange={(e)=>setNivel(e.target.value)}/>
-        
-        <br/><label>Tempo de conjuração: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2"placeholder="Tempo de conjuração" value={refTempo} onChange={(e)=>setTempo(e.target.value)}/>
-        
-        <br/><label>Alcance: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2"placeholder="Alcance" value={refAlcance} onChange={(e)=>setAlcance(e.target.value)}/>
-        
-        <br/><label>Duração: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2"placeholder="Duração" value={refDuracao} onChange={(e)=>setDuracao(e.target.value)}/>
-        
-        <br/><label>Componentes: </label>
-        <input className="border-2 rounded-lg pl-2 pr-2"placeholder="Componentes" value={refComponentes} onChange={(e)=>setComponentes(e.target.value)}/>
-        
-      </div>      
-
-  </div>
+    </div>
   );
 }
